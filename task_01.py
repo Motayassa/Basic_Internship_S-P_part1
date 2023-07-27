@@ -14,11 +14,11 @@ def is_palindrome(string):
     без учета знаков препинания, пробелов и регистра
 
     '''
-    if type(string) != str:
-        string = str(string)
-    string = [str(x) for x in string if x not in punctuation + ' ']
-    string = ''.join(string).lower()
-    if string == string[::-1]:
+    new_string = str(string)  # создаем копию строки, чтобы метод ее не изменял
+
+    new_string = [x for x in new_string if x not in punctuation + ' ']
+    new_string = ''.join(new_string).lower()
+    if new_string == new_string[::-1]:
         return True
     return False
 
