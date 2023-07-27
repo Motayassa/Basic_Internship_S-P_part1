@@ -4,20 +4,16 @@ range) для определения элементов из массива list
 должен вернуться пустой массив.'''
 
 
-def coincidence(*args):
+def coincidence(list=None, range=None):
     '''Возвращает список элементов из массива list, значения которого входят в
     указанный диапазон range
 
     '''
-    if len(args) < 2:
+    if list is None or range is None:  # проверка на кол-во аргументов
         return []
 
-    list, range = args
-
-    if not isinstance(list, type(list)) or not isinstance(range, type(range)):
-        return []
-
-    list_result = [x for x in list if x in range]
+    list_result = [x for x in list if type(x) in (int, float) and
+                   range[0] <= x <= range[-1]]  # отбор элементов из списка
 
     return list_result
 
