@@ -7,11 +7,22 @@ max_odd(array), который определит максимальный не�
 '''
 
 
-'''
-Тесты для примеров и проверки:
-max_odd([1, 2, 3, 4, 4]) # => 3
-max_odd([21.0, 2, 3, 4, 4]) # => 21
-max_odd(['ololo', 2, 3, 4, [1, 2], None]) # => 3
-max_odd(['ololo', 'fufufu']) # => None
-max_odd([2, 2, 4]) # => None
-'''
+def max_odd(array):
+    '''Возвращает максимальный нечетный элемент из списка array'''
+
+    odd_lst = [x for x in array if type(x) in (int, float) and x % 2 != 0]
+
+    if odd_lst == []:
+        return None
+
+    return int(max(odd_lst))  # преобразуем вывод в integer
+
+
+# Тесты для примеров и проверки:
+a = max_odd([1, 2, 3, 4, 4])  # => 3
+b = max_odd([21.0, 2, 3, 4, 4])  # => 21
+c = max_odd(['ololo', 2, 3, 4, [1, 2], None])  # => 3
+d = max_odd(['ololo', 'fufufu'])  # => None
+e = max_odd([2, 2, 4])  # => None
+
+print(a, b, c, d, e, sep='\n')
