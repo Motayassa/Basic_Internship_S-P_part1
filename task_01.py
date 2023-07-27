@@ -15,3 +15,12 @@ def is_palindrome(string):
     if string == string[::-1]:
         return True
     return False
+
+
+a = is_palindrome("A man, a plan, a canal -- Panama")  # => True
+b = is_palindrome("Madam, I'm Adam!")  # => True
+c = is_palindrome(333)  # => True
+d = is_palindrome(None)  # => False
+e = is_palindrome("Abracadabra")  # => False'''
+
+print(a, b, c, d, e, sep='\n')
