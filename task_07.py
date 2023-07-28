@@ -21,10 +21,10 @@ def combine_anagrams(words_array):
 
     anagram_groups = []  # хранилище для групп анаграмм
 
-    for j in words_array:
+    for word in words_array:
 
         # отфильтровываем анаграммы в список anagrams
-        anagrams = list(filter(lambda x: set(j) == set(x), words_array))
+        anagrams = list(filter(lambda x_word: set(word) == set(x_word), words_array))
 
         # сохраняем анаграммы в результирущий список
         if anagrams not in anagram_groups:
