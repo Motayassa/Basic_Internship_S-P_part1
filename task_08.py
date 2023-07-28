@@ -14,6 +14,7 @@ def multiply_numbers(inputs=None):
     if inputs is None:
         return None
 
+    # Приведение входных данных в строковый тип
     if type(inputs) == list:
         inputs = [str(x) for x in inputs]
 
