@@ -34,6 +34,7 @@ def multiply_numbers(inputs=None):
 
     return multiple
 
+
 # Тест для примеров и проверки:
 print(multiply_numbers())  # => None
 print(multiply_numbers('ss'))  # => None
