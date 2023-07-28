@@ -15,6 +15,10 @@ def combine_anagrams(words_array):
 
     '''
 
+    # Приведение слов в единый регистр
+    for word in words_array:
+        word.lower()
+
     anagram_groups = []  # хранилище для групп анаграмм
 
     for j in words_array:
