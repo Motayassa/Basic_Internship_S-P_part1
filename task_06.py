@@ -1,8 +1,8 @@
 '''
 Разработать методы для программы Камень-Ножницы-Бумага.
 Метод rps_game_winner должен принимать на вход массив следующей структуры
-[ ["player1", "P"], ["player2", "S"] ], где P - бумага, S - ножницы, R - камень, и
-функционировать следующим образом:
+[ ["player1", "P"], ["player2", "S"] ], где P - бумага, S - ножницы,
+R - камень, и функционировать следующим образом:
 
 • если количество игроков больше 2 необходимо вызывать исключение
 WrongNumberOfPlayersError
@@ -18,6 +18,10 @@ class WrongNumberOfPlayersError(Exception):
     pass
 
 
+class NoSuchStrategyError(Exception):
+    pass
+
+
 def rps_game_winner(game):
     '''
     Метод для игры Камень-Ножницы-Бумага. Возвращает имя и ход победителя,
@@ -25,8 +29,13 @@ def rps_game_winner(game):
     выигрывает игрок №1. P - бумага, S - ножницы, R - камень
 
     '''
+
     if not len(game) == 2:
         raise WrongNumberOfPlayersError('Неверное кол-во игроков, доступно 2')
+
+    gamer1, gamer2 = game  # распаковка первоначальной структуры
+    if gamer1[1] not in ('R', 'P', 'S') or gamer2[1] not in ('R', 'P', 'S'):
+        raise NoSuchStrategyError('В игре участвуют только камень - R, ножницы - P и бумага - S')
 
 
 rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])  # => WrongNumberOfPlayersError
