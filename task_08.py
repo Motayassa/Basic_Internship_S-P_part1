@@ -27,6 +27,12 @@ def multiply_numbers(inputs=None):
     if lst_number == []:
         return None
 
+    # перемножение цифр из input
+    multiple = 1
+    for i in lst_number:
+        multiple *= i
+
+    return multiple
 
 # Тест для примеров и проверки:
 print(multiply_numbers())  # => None
