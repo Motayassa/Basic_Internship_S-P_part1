@@ -35,9 +35,10 @@ def rps_game_winner(game):
 
     gamer1, gamer2 = game  # распаковка первоначальной структуры
     if gamer1[1] not in ('R', 'P', 'S') or gamer2[1] not in ('R', 'P', 'S'):
-        raise NoSuchStrategyError('В игре участвуют только камень - R, ножницы - P и бумага - S')
+        raise NoSuchStrategyError('В игре участвуют только камень - R, ножницы - S и бумага - P')
 
 
+# Тесты
 rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])  # => WrongNumberOfPlayersError
 rps_game_winner([['player1', 'P'], ['player2', 'A']])  # => NoSuchStrategyError
 rps_game_winner([['player1', 'P'], ['player2', 'S']])  # => 'player2 S'
