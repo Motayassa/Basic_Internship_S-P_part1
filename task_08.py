@@ -30,8 +30,8 @@ def multiply_numbers(inputs=None):
 
     # перемножение цифр из input
     multiple = 1
-    for i in lst_number:
-        multiple *= i
+    for number in lst_number:
+        multiple *= number
 
     return multiple
 
