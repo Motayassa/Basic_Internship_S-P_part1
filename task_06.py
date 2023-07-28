@@ -14,14 +14,22 @@ WrongNumberOfPlayersError
 '''
 
 
-'''
-Тесты для примеров и проверки:
-rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']]) #
-=> WrongNumberOfPlayersError
-rps_game_winner([['player1', 'P'], ['player2', 'A']]) #
-=> NoSuchStrategyError
-rps_game_winner([['player1', 'P'], ['player2', 'S']]) #
-=> 'player2 S'
-rps_game_winner([['player1', 'P'], ['player2', 'P']]) #
-=> 'player1 P
-'''
+class WrongNumberOfPlayersError(Exception):
+    pass
+
+
+def rps_game_winner(game):
+    '''
+    Метод для игры Камень-Ножницы-Бумага. Возвращает имя и ход победителя,
+    доступное количество игроков - 2. При одинаковой стратегии
+    выигрывает игрок №1. P - бумага, S - ножницы, R - камень
+
+    '''
+    if not len(game) == 2:
+        raise WrongNumberOfPlayersError('Неверное кол-во игроков, доступно 2')
+
+
+rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])  # => WrongNumberOfPlayersError
+rps_game_winner([['player1', 'P'], ['player2', 'A']])  # => NoSuchStrategyError
+rps_game_winner([['player1', 'P'], ['player2', 'S']])  # => 'player2 S'
+rps_game_winner([['player1', 'P'], ['player2', 'P']])  # => 'player1 P
