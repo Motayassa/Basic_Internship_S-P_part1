@@ -67,7 +67,8 @@ def gamer1_vs_gamer2(gamer1, gamer2):  # Вспомогательный мето
 
 
 # Тесты
-rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])  # => WrongNumberOfPlayersError
+rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])
+# => WrongNumberOfPlayersError
 rps_game_winner([['player1', 'P'], ['player2', 'A']])  # => NoSuchStrategyError
 rps_game_winner([['player1', 'P'], ['player2', 'S']])  # => 'player2 S'
 rps_game_winner([['player1', 'P'], ['player2', 'P']])  # => 'player1 P
