@@ -39,6 +39,8 @@ def rps_game_winner(game):
 
     res = gamer1_vs_gamer2(gamer1, gamer2)
 
+    return f'{res[0]} {res[1]}'
+
 
 def gamer1_vs_gamer2(gamer1, gamer2):  # Вспомогательный метод
     '''
