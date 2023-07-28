@@ -5,12 +5,15 @@
 '''
 
 
-def multiply_numbers(inputs):
+def multiply_numbers(inputs=None):
     '''
     Возвращает произведение цифр, входящих в inputs
 
     '''
-    pass
+
+    if inputs is None:
+        return None
+        
 
 
 '''
