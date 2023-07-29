@@ -36,7 +36,7 @@ class Dessert:
     def is_healthy(self):
         '''возвращает true при условии калорийности десерта менее 200'''
 
-        if not self.calories < 200:
+        if not self.calories < 200 or type(self.calories) not in (int, float):
             return False
 
         return True
