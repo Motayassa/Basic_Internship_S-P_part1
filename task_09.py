@@ -35,10 +35,17 @@ def connect_dicts(dict1, dict2):
                       if k not in res_priority if
                       v >= 10}
 
+    final_res = res_priority | res_unpriority
+
+    return dict(sorted(final_res.items(), key=lambda item: item[1]))
+
+
 # Тесты для примеров и проверки:
-connect_dicts({"a": 2, "b": 12}, {"c": 11, "e": 5})
+a = connect_dicts({"a": 2, "b": 12}, {"c": 11, "e": 5})
 # => { "c": 11, "b": 12 }
-connect_dicts({"a": 13, "b": 9, "d": 11}, {"c": 12, "a": 15})
+b = connect_dicts({"a": 13, "b": 9, "d": 11}, {"c": 12, "a": 15})
 # => { d: 11, "c": 12, "a": 13 }
-connect_dicts({"a": 14, "b": 12}, {"c": 11, "a": 15})
+c = connect_dicts({"a": 14, "b": 12}, {"c": 11, "a": 15})
 # => { "c": 11, "b": 12, "a": 15 }
+
+print(a, b, c, sep='\n')
