@@ -51,6 +51,7 @@ class Dessert:
 
 
 # Тесты
+a = Dessert()
 a = Dessert('name', 200)
 print(a.name)
 print(a.calories)
