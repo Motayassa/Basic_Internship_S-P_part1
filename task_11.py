@@ -24,3 +24,8 @@ class Dessert:
     @name.setter
     def name(self, name_dessert):
         self._name = name_dessert
+
+
+# Тесты
+a = Dessert('name', 200)
+print(a.name)
