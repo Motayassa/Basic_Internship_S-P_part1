@@ -49,10 +49,23 @@ class Dessert:
         return True
 
 
-# Тесты
-a = Dessert()
-a = Dessert('name', 200)
-print(a.name)
-print(a.calories)
-a.is_healthy()
-a.is_delicious()
+class JellyBean(Dessert):
+    def __init__(self, name=None, calories=0, flavor=None):
+        super().__init__(name, calories)
+        self.flavor = flavor
+
+    @property
+    def flavor(self):
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        self._flavor = flavor
+
+    def is_delicious(self):
+        '''возвращает true для всех десертов'''
+
+        if not self.flavor == 'black licorice':
+            return False
+
+        return True
