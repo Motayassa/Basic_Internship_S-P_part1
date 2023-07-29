@@ -16,3 +16,11 @@ class Dessert:
     def __init__(self, name=None, calories=0):
         self.name = name
         self.calories = calories
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name_dessert):
+        self._name = name_dessert
