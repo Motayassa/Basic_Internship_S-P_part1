@@ -41,9 +41,18 @@ class Dessert:
 
         return True
 
+    def is_delicious(self):
+        '''возвращает true для всех десертов'''
+
+        if not self.__class__ == Dessert:
+            return False
+
+        return True
+
 
 # Тесты
 a = Dessert('name', 200)
 print(a.name)
 print(a.calories)
 a.is_healthy()
+a.is_delicious()
