@@ -50,6 +50,11 @@ class Dessert:
 
 
 class JellyBean(Dessert):
+    '''
+    Расширяет класс Dessert, добавляя новое свойство - flavor
+    Переопределяет метод is_delicious
+
+    '''
     def __init__(self, name=None, calories=0, flavor=None):
         super().__init__(name, calories)
         self.flavor = flavor
@@ -63,7 +68,10 @@ class JellyBean(Dessert):
         self._flavor = flavor
 
     def is_delicious(self):
-        '''возвращает true для всех десертов'''
+        '''
+        возвращает true для всех десертов, кроме десертов со свойством
+        flavor = 'black licorice'
+        '''
 
         if self.flavor == 'black licorice':
             return False
