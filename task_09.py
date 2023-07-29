@@ -31,6 +31,9 @@ def connect_dicts(dict1, dict2):
 
     res_priority = {k: v for k, v in priority_dict.items() if v >= 10}
 
+    res_unpriority = {k: v for k, v in unpriority_dict.items()
+                      if k not in res_priority if
+                      v >= 10}
 
 # Тесты для примеров и проверки:
 connect_dicts({"a": 2, "b": 12}, {"c": 11, "e": 5})
