@@ -19,7 +19,17 @@ def connect_dicts(dict1, dict2):
     по особым правилам
     '''
 
-    pass
+    sum_dict1 = sum(dict1.values())
+    sum_dict2 = sum(dict2.values())
+
+    if sum_dict2 >= sum_dict1:
+        priority_dict = dict2
+        unpriority_dict = dict1
+    else:
+        priority_dict = dict1
+        unpriority_dict = dict2
+
+    res_priority = {k: v for k, v in priority_dict.items() if v >= 10}
 
 
 # Тесты для примеров и проверки:
