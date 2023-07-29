@@ -35,8 +35,10 @@ def connect_dicts(dict1, dict2):
                       if k not in res_priority if
                       v >= 10}
 
+    # создание результирующего словаря
     final_res = res_priority | res_unpriority
 
+    # сортировка словаря по значениям
     return dict(sorted(final_res.items(), key=lambda item: item[1]))
 
 
