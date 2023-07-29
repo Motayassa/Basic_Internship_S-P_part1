@@ -33,8 +33,17 @@ class Dessert:
     def calories(self, calories):
         self._calories = calories
 
+    def is_healthy(self):
+        '''возвращает true при условии калорийности десерта менее 200'''
+
+        if not self.calories < 200:
+            return False
+
+        return True
+
 
 # Тесты
 a = Dessert('name', 200)
 print(a.name)
 print(a.calories)
+a.is_healthy()
