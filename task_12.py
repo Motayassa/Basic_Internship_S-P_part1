@@ -69,3 +69,8 @@ class JellyBean(Dessert):
             return False
 
         return True
+
+
+# Тесты
+a = JellyBean('name', 100, 'black licoric')
+a.is_delicious()
