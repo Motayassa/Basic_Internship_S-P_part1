@@ -83,3 +83,4 @@ class JellyBean(Dessert):
 # Тесты
 a = JellyBean('name', 100, 'black licorice')
 a.is_delicious()
+print(a.__dict__)
