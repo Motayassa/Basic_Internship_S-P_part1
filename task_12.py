@@ -12,6 +12,7 @@ class Dessert:
     Описывает дессерты свойствами - имя и калорийность, содержит два метода.
 
     '''
+
     def __init__(self, name=None, calories=0):
         self.name = name
         self.calories = calories
