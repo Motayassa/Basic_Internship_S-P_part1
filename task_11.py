@@ -25,7 +25,16 @@ class Dessert:
     def name(self, name_dessert):
         self._name = name_dessert
 
+    @property
+    def calories(self):
+        return self._calories
+
+    @calories.setter
+    def calories(self, calories):
+        self._calories = calories
+
 
 # Тесты
 a = Dessert('name', 200)
 print(a.name)
+print(a.calories)
