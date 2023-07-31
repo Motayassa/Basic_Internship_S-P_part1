@@ -35,8 +35,10 @@ class Dessert:
 
     def is_healthy(self):
         '''возвращает true при условии калорийности десерта менее 200'''
+        if type(self.calories) not in (int, float):
+            return False
 
-        if not self.calories < 200 or type(self.calories) not in (int, float):
+        if not self.calories < 200:
             return False
 
         return True
@@ -50,10 +52,28 @@ class Dessert:
         return True
 
 
-# Тесты
-a = Dessert()
-a = Dessert('name', 200)
-print(a.name)
-print(a.calories)
-a.is_healthy()
-a.is_delicious()
+# Test commands:
+dessert = Dessert()
+dessert.name = "test_name"
+print(dessert.name)
+# test_name
+
+dessert.name = "test_name2"
+print(dessert.name)
+# test_name2
+
+if dessert.name != "test_name2": raise Exception("Setter for name is not working")
+dessert.calories = "test_calories"
+print(dessert.calories)
+# test_calories
+
+dessert.calories = "test_calories2"
+print(dessert.calories)
+# test_calories2
+
+if dessert.calories != "test_calories2": raise Exception("Setter for calories is not working")
+print(dessert.is_delicious())
+# True
+
+if not dessert.is_delicious(): raise Exception("Invalid method result")
+print(dessert.is_healthy())
