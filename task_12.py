@@ -39,7 +39,7 @@ class Dessert:
         if type(self.calories) not in (int, float):
             return False
 
-        if not self.calories < 200 or type(self.calories) not in (int, float):
+        if not self.calories < 200:
             return False
 
         return True
