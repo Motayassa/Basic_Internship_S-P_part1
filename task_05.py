@@ -22,15 +22,14 @@ def date_in_future(integer):
 
     # Возвращение текущей даты
     if type(integer) is not int:
-        return dt.strftime('%m-%d-%Y %H:%M:%S')
+        return dt.strftime('%d-%m-%Y %H:%M:%S')
 
     # Возвращение даты через integer дней
     if type(integer) is int:
         days = timedelta(integer)  # число дней для прибавления к дате
         new_data = dt + days
-        return new_data.strftime('%m-%d-%Y %H:%M:%S')
+        return new_data.strftime('%d-%m-%Y %H:%M:%S')
 
 
-# Тесты для примеров и проверки:
-print(date_in_future([]))  # => текущая дата
-print(date_in_future(2))  # => текущая дата + 2 дня
+print(date_in_future('integer'))
+print(date_in_future(2))
